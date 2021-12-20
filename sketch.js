@@ -8,7 +8,7 @@ var canvas;
 var palyer, playerBase;
 var computer, computerBase;
 
-//Declare an array for arrows playerArrows = [ ]
+// Declarar un arreglo para las flechas playerArrows = [ ]
 var playerArrows = [];
 var computerArrows = []
 var arrow;
@@ -52,7 +52,7 @@ function setup() {
     120,
     120
   );
-  //Function to manage computer Arrows
+  // Función para controlar las flechas de la computadora
   handleComputerArcher(); 
 
 
@@ -63,11 +63,11 @@ function draw() {
 
   Engine.update(engine);
 
-  // Title
+  // Título
   fill("#FFFF");
   textAlign("center");
   textSize(40);
-  text("EPIC ARCHERY", width / 2, 100);
+  text("TIRO CON ARCO ÉPICO", width / 2, 100);
 
  
   playerBase.display();
@@ -83,7 +83,7 @@ function draw() {
   playerArcher.display();
   computerArcher.display()
 
- // Use for loop to display arrow using showArrow() function
+ // Usar un ciclo for para mostrar las flechas usando la función showArrow()
  for (var i = 0; i < playerArrows.length; i++) {
   showArrows(i, playerArrows);
 }
@@ -93,14 +93,14 @@ for (var i = 0; i < computerArrows.length; i++) {
 }
 
 
-//Call functions to detect collision for player and computer
+// Llamar las funciones para detectar colisiones para el jugador y la computadora 
 
 }
 
 function keyPressed() {
 
   if(keyCode === 32){
-    // create an arrow object and add into an array ; set its angle same as angle of playerArcher
+    // Crear un objeto flecha y agregarlo al arreglo. Configurar su ángulo igual al ángulo de playerArcher
     var posX = playerArcher.body.position.x;
     var posY = playerArcher.body.position.y;
     var angle = playerArcher.body.angle+PI/2;
@@ -117,7 +117,7 @@ function keyPressed() {
 function keyReleased () {
 
   if(keyCode === 32){
-    //call shoot() function for each arrow in an array playerArrows
+    // Llamar a la función shoot() para cada flecha en el arreglo playerArrows
     if (playerArrows.length) {
       var angle = playerArcher.body.angle+PI/2;
       playerArrows[playerArrows.length - 1].shoot(angle);
@@ -125,7 +125,7 @@ function keyReleased () {
   }
 
 }
-//Display arrow and Tranjectory
+// Mostrar las flechas y la trayectoria 
 function showArrows(index, arrows) {
   arrows[index].display();
   
@@ -167,10 +167,10 @@ function handleComputerArcher() {
 }
 
 function handlePlayerArrowCollision() {
-// Write code to detect collision between player arrow and opponent
+// Escribir el código para detectar colisiones entre la flecha del jugador y el oponente
 }
 
 function handleComputerArrowCollision() {
-  //Write code to detect collision between computer arrow and opponent
+  // Escribir el código para detectar colisiones entre la flecha de la computadora y el oponente
 }
 
